@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="output.css" rel="stylesheet" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <main
+         class="mx-auto flex h-screen w-80 select-none flex-col justify-center overflow-hidden font-poppins"
+      >
+         <div
+            class="relative w-full rounded-3xl bg-Bright-Gray px-5 pb-10 pt-5 dark:bg-Gunmetal"
+         >
+            <button
+               id="theme-toggle"
+               type="button"
+               class="absolute right-4 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+            >
+               <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden h-6 w-6 cursor-pointer"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+               >
+                  <path
+                     fill-rule="evenodd"
+                     d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                     clip-rule="evenodd"
+                  ></path>
+               </svg>
+               <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden h-6 w-6 cursor-pointer"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+               >
+                  <path
+                     d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+               </svg>
+            </button>
+            <section class="flex h-56 flex-col justify-center gap-8 py-4">
+               <p
+                  id="current"
+                  class="break-all text-right text-4xl leading-tight tracking-wide text-slate-700 dark:text-slate-50"
+               ></p>
+               <p
+                  id="answer"
+                  class="text-right text-xl tracking-wide text-slate-700 opacity-80 dark:text-slate-50"
+               ></p>
+            </section>
+
+            <section class="flex flex-col gap-4 text-sm">
+               <div class="flex gap-5 font-semibold text-Cadmium-Orange">
+                  <button
+                     id="clear"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     C
+                  </button>
+                  <button
+                     id="delete"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     DEL
+                  </button>
+                  <button
+                     value="%"
+                     data-attribute="operation"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     %
+                  </button>
+                  <button
+                     value="÷"
+                     data-attribute="operation"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     ÷
+                  </button>
+               </div>
+
+               <div class="flex gap-5 text-slate-700 dark:text-slate-50">
+                  <button
+                     data-attribute="number"
+                     value="7"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     7
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="8"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     8
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="9"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     9
+                  </button>
+                  <button
+                     value="*"
+                     data-attribute="operation"
+                     class="flex-1 rounded-lg py-4 text-Cadmium-Orange opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     &times;
+                  </button>
+               </div>
+
+               <div class="flex gap-5 text-slate-700 dark:text-slate-50">
+                  <button
+                     data-attribute="number"
+                     value="4"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     4
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="5"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     5
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="6"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     6
+                  </button>
+                  <button
+                     value="-"
+                     data-attribute="operation"
+                     class="flex-1 rounded-lg py-4 text-Cadmium-Orange opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     -
+                  </button>
+               </div>
+
+               <div class="flex gap-5 text-slate-700 dark:text-slate-50">
+                  <button
+                     data-attribute="number"
+                     value="1"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     1
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="2"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     2
+                  </button>
+                  <button
+                     data-attribute="number"
+                     value="3"
+                     class="flex-1 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     3
+                  </button>
+                  <button
+                     value="+"
+                     data-attribute="operation"
+                     class="flex-1 rounded-lg py-4 text-Cadmium-Orange opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray"
+                  >
+                     +
+                  </button>
+               </div>
+
+               <div class="flex gap-5 text-slate-700 dark:text-slate-50">
+                  <button
+                     data-attribute="number"
+                     value="0"
+                     class="basis-1/4 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     0
+                  </button>
+                  <button
+                     id="dot"
+                     value="."
+                     class="basis-1/4 rounded-lg py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:bg-Yankees-Blue hover:text-Bright-Gray hover:opacity-100 dark:shadow-neumorphism-dark dark:hover:bg-Bright-Gray dark:hover:text-Gunmetal"
+                  >
+                     .
+                  </button>
+                  <button
+                     id="equal"
+                     class="basis-1/2 rounded-lg bg-Cadmium-Orange py-4 opacity-80 shadow-neumorphism-light transition duration-200 ease-linear hover:opacity-100 dark:shadow-neumorphism-dark"
+                  >
+                     =
+                  </button>
+               </div>
+            </section>
+         </div>
+      </main>
+
+      <script src="index.js"></script>
+      <script src="theme.js"></script>
+   </body>
+</html>
